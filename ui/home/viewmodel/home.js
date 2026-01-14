@@ -57,57 +57,58 @@ const products = [
 ];
 
 
-const container_welcome = document.getElementById("topWelcomeItems");
-const productsContainers = document.querySelectorAll(".products");
-const container_categories = document.getElementById('categories-container');
 
-// Top welcome items
-topWelcomeData.forEach(item => {
-    container_welcome.innerHTML += `
+function  renderTopWelcomeItems() {
+    const container_welcome = document.getElementById("topWelcomeItems");
+    topWelcomeData.forEach(item => {
+        container_welcome.innerHTML += `
         <div class="top-welcome-item">
             <img class="small-icon" src="${item.img}" alt="">
             <p class="body-grey">${item.text}</p>
             <div style="height: 18px;width: 1px;background-color: #D9D9D9"></div>
         </div>
     `;
-});
+    });
+}
 
+function renderCategories() {
+    const container_categories = document.getElementById('categories-container');
+    let selectedCategory = null;
+    categories.forEach(category => {
+        const div = document.createElement('div');
+        div.classList.add('category-btn');
 
-// Categories with single select
-let selectedCategory = null;
-categories.forEach(category => {
-    const div = document.createElement('div');
-    div.classList.add('category-btn');
-
-    div.innerHTML = `
+        div.innerHTML = `
         <p class="body-grey" style="color: #222222">${category.category_name}</p>
         <img class="small-icon" src="/assets/images/bottom-arrow.png">
     `;
 
-    // Bosilganda
-    div.addEventListener('click', () => {
-        // Agar oldin tanlangan bo'lsa, o'chiramiz
-        if (selectedCategory && selectedCategory !== div) {
-            selectedCategory.classList.remove('selected');
-        }
+        // Bosilganda
+        div.addEventListener('click', () => {
+            // Agar oldin tanlangan bo'lsa, o'chiramiz
+            if (selectedCategory && selectedCategory !== div) {
+                selectedCategory.classList.remove('selected');
+            }
 
-        // Tanlangan elementni toggle qilamiz
-        if (div.classList.contains('selected')) {
-            div.classList.remove('selected');
-            selectedCategory = null;
-        } else {
-            div.classList.add('selected');
-            selectedCategory = div;
-        }
+            // Tanlangan elementni toggle qilamiz
+            if (div.classList.contains('selected')) {
+                div.classList.remove('selected');
+                selectedCategory = null;
+            } else {
+                div.classList.add('selected');
+                selectedCategory = div;
+            }
+        });
+
+        container_categories.appendChild(div);
     });
+}
 
-    container_categories.appendChild(div);
-});
-
-//add products
-productsContainers.forEach(container => {
-    products.forEach(product => {
-        container.innerHTML += `
+function renderProducts() {
+    const productsContainers = document.querySelectorAll(".products");
+    productsContainers.forEach(container => {
+        products.forEach(product => {
+            container.innerHTML += `
             <div class="product-card">
                 <div class="product-card-img">
                     <img src="${product.image}" alt="${product.name}">
@@ -133,5 +134,21 @@ productsContainers.forEach(container => {
                 </div>
             </div>
         `;
+        });
     });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const page = document.body.dataset.page;
+
+    if (page === "home") {
+        renderCategories();
+        renderTopWelcomeItems();
+        renderProducts();
+    }
+
+    if (page === "products") {
+        renderProducts();
+    }
 });
