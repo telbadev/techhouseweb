@@ -48,6 +48,29 @@
     <div class="divider"></div>
 
     <div class="body-row">
+        <div class="left-side">
+            <div class="left-side-container">
+                <div class="left-side-title">
+                    <img class="normal-icon" src="/assets/images/sort.png">
+                    <p class="body-medium" style="color: #008ECC">Kategoriyalar</p>
+                </div>
+                <br>
+                <div class="product-category-items"></div>
+            </div>
+            <div class="left-side-container">
+                <div class="left-side-title">
+                    <img class="normal-icon" src="/assets/images/doscount_1.png">
+                    <p class="body-medium" style="color: #008ECC">Narx</p>
+                </div>
+                <br>
+                <div class="price-input">
+                    <input type="number" class="price-filter-input" placeholder="500000">
+                    <input type="number" class="price-filter-input" placeholder="1500000">
+                </div>
+                <input type="range" min="0" max="100" value="50">
+
+            </div>
+        </div>
         <div class="products"></div>
     </div>
 
@@ -104,6 +127,7 @@
 </footer>
 
 <script type="module" src="../../home/viewmodel/home.js"></script>
+<script type="module" src="../../products/viewmodel/products.js"></script>
 
 </body>
 </html>

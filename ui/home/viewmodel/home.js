@@ -150,5 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (page === "products") {
         renderProducts();
+        renderTopWelcomeItems();
     }
 });
