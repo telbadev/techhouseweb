@@ -40,6 +40,7 @@ function renderCategories() {
     });
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     renderCategories();
 });

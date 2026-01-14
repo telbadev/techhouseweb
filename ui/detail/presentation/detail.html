@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="detail.css">
+
+</head>
+<body data-page="detail">
+<div class="top-welcome my-padding">
+    <p class="body-grey">Tech Housega xush kelibsiz!</p>
+    <div class="top-welcome-items" id="topWelcomeItems"></div>
+</div>
+
+<div class="container">
+    <nav class="navbar">
+        <a href="../../home/presentation/home.html">
+            <div class="navbar-left unselect">
+                <img class="logo border" src="/assets/images/applogo.png">
+                <h3 style="color: #008ECC">Tech House</h3>
+            </div>
+        </a>
+        <div class="navbar-center">
+            <div class="search-bar border">
+                <img class="small-icon" src="/assets/images/search.png">
+                <form action="../../products/presentation/products.html" method="GET">
+                    <input
+                            class="search-input body-grey"
+                            type="text"
+                            name="q"
+                            placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
+                    >
+                </form>
+
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="">
+                <div class="auth top-welcome-item unselect" style="align-items: end">
+                    <img class="small-icon" src="/assets/images/person.png" alt="">
+                    <p class="body-grey">Sign Up/Sign In</p>
+                    <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
+                </div>
+            </a>
+            <a href="../../basket/presentation/basket.html"
+               class="basket top-welcome-item unselect" style="align-items: end">
+                <img class="small-icon" src="/assets/images/basket.png" alt="">
+                <p class="body-grey">Cart</p>
+            </a>
+        </div>
+    </nav>
+</div>
+<div class="divider"></div>
+    <div class="container">
+        <div class="categories-btns unselect" id="categories-container"></div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="my-body my-screen">
+        <div class="" style="flex: 1;">
+            <div class="product-img-detail">
+                <div class="product-images">
+                    <div class="product-images-item">
+                        <img src="/assets/images/cleaner.png" alt="">
+                    </div>
+                    <div class="product-images-item">
+                        <img src="/assets/images/cleaner.png" alt="">
+                    </div>
+                    <div class="product-images-item">
+                        <img src="/assets/images/cleaner.png" alt="">
+                    </div>
+                </div>
+                <div class="product-img">
+                    <img src="/assets/images/cleaner.png" alt="">
+                </div>
+                <div class="product-info">
+                    <div class="product-info-text" style="display: flex; flex-direction: column;gap: 10px;">
+                        <div class="product-title-discounts">
+                            <div class="product-title-discount" style="color: white;background-color: #E30000">Chegirma</div>
+                            <div class="product-title-discount" style="color: black;background-color: #FFCC00">82%</div>
+                        </div>
+                        <p class="body-medium">Biryusa 2000MH Germaniskiy</p>
+                        <p class="body-medium">Narx: <span>6 407 000 so'm</span></p>
+                        <p class="body-medium">Eski narx: <span style="color: red;text-decoration: line-through">77 807 000 so'm</span></p>
+                    </div>
+                    <div class="add-to-cart-btn">
+                        <p class="body-medium" style="color: white">Add to Cart</p>
+                        <img class="small-icon" src="/assets/images/basket_white.png" alt="">
+                    </div>
+                    <div class="adition">
+                        <div class="row">
+                            <img class="small-icon" src="/assets/images/check_circle.png" alt="">
+                            <p class="body-grey">Tovar 3-omborda omborida</p>
+                        </div>
+                        <div class="row">
+                            <img class="small-icon" src="/assets/images/delivery_truck_1.png" alt="">
+                            <p class="body-grey">Yetkazib berish BEPUL</p>
+                        </div>
+                        <div class="row">
+                            <img class="small-icon" src="/assets/images/time.png" alt="">
+                            <p class="body-grey">7:00 dan 8:00</p>
+                        </div>
+                        <div class="row">
+                            <p class="body-grey">Chegirma: </p>
+                            <p class="body-medium">12%</p>
+                        </div>
+                        <div class="row">
+                            <p class="body-grey">Narx: </p>
+                            <p class="body-medium">6 000 000 so’m</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate deleniti esse natus nisi obcaecati quis sed sint ut velit?
+            </div>
+            <div class="body-section-title">
+                <div class="section-title">
+                    <div class="body-section-title body-grey"> <span>O'xshash</span> ma'lumotlar</div>
+                    <div class="body-section-btn">
+                        <p class="body-grey">View all</p>
+                        <img class="small-icon" src="/assets/images/right_arrow.png">
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div class="products"></div>
+        </div>
+
+    </div>
+
+    <br><br>
+    <footer class="footer">
+        <div class="">
+
+            <div class="footer-info">
+                <div class="footer-col brand">
+                    <h2>Tech House</h2>
+                    <p>Savollaringiz bo‘lsa, javob berishga tayyormiz!</p>
+                    <p class="phone">+998 91 082 80 81</p>
+                    <p class="work-time">Ish vaqti: Har kuni 09:00 - 21:00</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Ma'lumot</h3>
+                    <ul>
+                        <li><a href="#">Biz haqimizda</a></li>
+                        <li><a href="#">Kafolat</a></li>
+                        <li><a href="#">Aksiya</a></li>
+                        <li><a href="#">Bizning do‘konlarimiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Xizmatlar</h3>
+                    <ul>
+                        <li><a href="#">Xizmatlar</a></li>
+                        <li><a href="#">To‘lov usullari</a></li>
+                        <li><a href="#">Hamkorlik</a></li>
+                        <li><a href="#">Qaytarish usullari</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Mijozlar uchun</h3>
+                    <ul>
+                        <li><a href="#">Yetkazib berish</a></li>
+                        <li><a href="#">Biz bilan bog‘lanish</a></li>
+                        <li><a href="#">Service center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-container">
+                <img style="height: 30px;width: 50px;" src="/assets/images/insta.png" alt="">
+                <img style="height: 30px;width: 50px;" src="/assets/images/telegram.png" alt="">
+                <img style="height: 30px;width: 50px;" src="/assets/images/tiktok.png" alt="">
+                <img style="height: 30px;width: 50px;" src="/assets/images/x.png" alt="">
+                <img style="height: 30px;width: 50px;" src="/assets/images/facebook.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/ui/home/viewmodel/home.js"></script>
+    <script type="module" src="/ui/detail/viewmodel/detail.js"></script>
+</body>
+</html>

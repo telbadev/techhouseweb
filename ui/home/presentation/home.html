@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -14,43 +14,56 @@
 
 </head>
 <body data-page="home">
-<div class="top-welcome my-padding">
+    <div class="top-welcome my-padding">
     <p class="body-grey">Tech Housega xush kelibsiz!</p>
     <div class="top-welcome-items" id="topWelcomeItems"></div>
 </div>
 
     <div class="container">
         <nav class="navbar">
-            <div class="navbar-left unselect">
-                <img class="logo border" src="/assets/images/applogo.png">
-                <h3 style="color: #008ECC">Tech House</h3>
-            </div>
+            <a href="../../home/presentation/home.html">
+                <div class="navbar-left unselect">
+                    <img class="logo border" src="/assets/images/applogo.png">
+                    <h3 style="color: #008ECC">Tech House</h3>
+                </div>
+            </a>
             <div class="navbar-center">
                 <div class="search-bar border">
                     <img class="small-icon" src="/assets/images/search.png">
-                    <input class="search-input body-grey" type="text" placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring...">
+                    <form action="../../products/presentation/products.html" method="GET">
+                        <input
+                                class="search-input body-grey"
+                                type="text"
+                                name="q"
+                                placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
+                        >
+                    </form>
+
                 </div>
             </div>
             <div class="navbar-right">
-                <div class="auth top-welcome-item unselect">
-                    <img class="small-icon" src="/assets/images/person.png" alt="">
-                    <p class="body-grey">Sign Up/Sign In</p>
-                    <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
-                </div>
-                <div class="basket top-welcome-item unselect">
+                <a href="">
+                    <div class="auth top-welcome-item unselect" style="align-items: end">
+                        <img class="small-icon" src="/assets/images/person.png" alt="">
+                        <p class="body-grey">Sign Up/Sign In</p>
+                        <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
+                    </div>
+                </a>
+                <a href="../../basket/presentation/basket.html"
+                   class="basket top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/basket.png" alt="">
                     <p class="body-grey">Cart</p>
-                </div>
+                </a>
             </div>
         </nav>
     </div>
-        <div class="divider"></div>
+    <div class="divider"></div>
     <div class="container">
         <div class="categories-btns unselect" id="categories-container"></div>
     </div>
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <div class="container">
+    <div class="container">
             <div class="banner-daily">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -166,13 +179,13 @@
 
             <div class="products"></div>
 
-            <div class="body-section-title">
+            <div class="body-section-title" id="serviceCardsTitle">
                 <div class="section-title">
                     <div class="body-section-title body-grey"> <span>Xizmatlarimiz</span></div>
                 </div>
             </div>
             <br>
-            <div class="service-cards">
+            <div class="service-cards" >
                 <div class="service-card">
                     <img  class="service-card-img" src="/assets/images/service_1.png" alt="">
                     <div class="service-card-bottom">
@@ -330,8 +343,8 @@
             </div>
 
         </div>
-        <br><br>
-        <footer class="footer">
+    <br><br>
+    <footer class="footer">
             <div class="">
 
                 <div class="footer-info">

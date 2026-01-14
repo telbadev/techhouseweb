@@ -1,23 +1,10 @@
-const topWelcomeData = [
-    { img: "/assets/images/location.png", text: "Manzilga ga yetkazish" },
-    { img: "/assets/images/delivery_truck_1.png", text: "Buyurtmani kuzatish" },
-    { img: "/assets/images/doscount_1.png", text: "Barcha xizmatlar" }
-];
+// import { renderTopWelcomeItems } from "/ui/home/viewmodel/home.js";
 
 const categories = [
-    {
-        category_name: "Oshxona texnikasi",
-        img: "/assets/images/washing_machine.png",
-        category_id: 1
-    },
-    { category_name: "Tozalash uskunalari", category_id: 2, img: "/assets/images/cleaner.png", },
-    { category_name: "Isitish qurilmalari", category_id: 3,img: "/assets/images/heater.png", },
-    { category_name: "Shaxsiy parvarish qurilmalari", category_id: 4,img: "/assets/images/air_condition.png", },
-    { category_name: "Aqlli uy texnikasi", category_id: 5 , img: "/assets/images/smart_home.png"},
-    { category_name: "Changyutgich", category_id: 5 , img: "/assets/images/cleaner.png"},
-    { category_name: "Sovutish qurilmalari", category_id: 5 , img: "/assets/images/air_condition.png"}
+    { category_name: "Tozalash uskunalari", category_id: 1, img: "/assets/images/cleaner.png", },
+    { category_name: "Changyutgich", category_id: 2,img: "/assets/images/heater.png", },
+    { category_name: "Changyutgich Bosch BGS7RCL", category_id: 3,img: "/assets/images/heater.png", },
 ];
-
 const products = [
     {
         name: "Changyutgich Bosch BGS7RCL",
@@ -56,34 +43,6 @@ const products = [
     },
 ];
 
-
-
-function renderTopWelcomeItems() {
-    const container = document.getElementById("topWelcomeItems");
-
-    topWelcomeData.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "top-welcome-item";
-
-        div.innerHTML = `
-            <img class="small-icon" src="${item.img}" alt="">
-            <p class="body-grey">${item.text}</p>
-            <div style="height: 18px;width: 1px;background-color: #D9D9D9"></div>
-        `;
-
-        // 👇 AGAR "Barcha xizmatlar" bo‘lsa
-        div.style.cursor = "pointer";
-
-        div.addEventListener("click", () => {
-            document.getElementById("serviceCardsTitle")
-                .scrollIntoView({ behavior: "smooth" });
-        });
-
-        container.appendChild(div);
-    });
-}
-
-
 function renderCategories() {
     const container_categories = document.getElementById('categories-container');
     let selectedCategory = null;
@@ -93,25 +52,13 @@ function renderCategories() {
 
         div.innerHTML = `
         <p class="body-grey" style="color: #222222">${category.category_name}</p>
-        <img class="small-icon" src="/assets/images/bottom-arrow.png">
+        <img class="small-icon" style="transform: rotate(-90deg); " src="/assets/images/bottom-arrow.png">
     `;
 
-        // Bosilganda
-        div.addEventListener('click', () => {
-            // Agar oldin tanlangan bo'lsa, o'chiramiz
-            if (selectedCategory && selectedCategory !== div) {
-                selectedCategory.classList.remove('selected');
-            }
-
-            // Tanlangan elementni toggle qilamiz
-            if (div.classList.contains('selected')) {
-                div.classList.remove('selected');
-                selectedCategory = null;
-            } else {
-                div.classList.add('selected');
-                selectedCategory = div;
-            }
-        });
+        if(category.category_id===1) {
+            div.classList.add('selected');
+            selectedCategory = div;
+        }
 
         container_categories.appendChild(div);
     });
@@ -153,22 +100,7 @@ function renderProducts() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const page = document.body.dataset.page;
-    renderTopWelcomeItems();
-    if (page === "home") {
-        renderCategories();
-        renderProducts();
-    }
-
-    if (page === "products") {
-        renderProducts();
-
-    }
-});
-document.addEventListener("click", (e) => {
-    const card = e.target.closest(".product-card");
-    if (!card) return;
-
-    const id = card.dataset.id;
-    location.href = `../../detail/presentation/detail.html`;
+    // renderTopWelcomeItems();
+    renderCategories();
+    renderProducts();
 });

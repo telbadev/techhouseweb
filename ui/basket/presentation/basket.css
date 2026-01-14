@@ -7,11 +7,11 @@ p{
     margin: 0;
 }
 
+
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .my-padding{
@@ -92,6 +92,7 @@ body{
 .top-welcome-item{
     display: flex;
     gap: 6px;
+    align-items: end;
 }
 
 .navbar{
@@ -133,169 +134,236 @@ body{
 }
 
 
-
-.products{
-    flex:4;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 15px;
-}
-
-.product-card{
-    width: 100%;
-    margin-top: 15px;
+.basket-title-content{
     display: flex;
-    position: relative;
-    flex-direction: column;
-    border: 2px solid #cdcccc;
-    border-radius: 15px;
-    height: 295px;
-    max-width: 227px;
-    overflow: hidden;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.product-card-img{
-    flex: 5;
-    background-color: #EFEFEF;
+.body-left{
+    flex:3;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-right{
+    flex:2.1;
+    justify-content: center;
+    display: flex;
+}
+
+.basket-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.basket-title-left,.basket-title-right{
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    gap: 10px;
 }
 
-.product-card-img img{
+.basket-title-left p{
+    margin: 0;
+}
+
+.basket-title-item{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.basket-title-item>p{
+    margin: 0;
+}
+
+input{
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 5px;
+}
+
+.basket-cart{
+    display: flex;
+    gap: 14px;
+    width: 100%;          /* ota (.body-left) width’iga moslashadi */
+    max-width: 100%;      /* hech qachon tashqariga chiqmaydi */
+    padding: 14px 16px;
+    align-items: stretch;
+    height: 140px;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.basket-cart-img{
+    width: 120px;
+    overflow: hidden;
+    background-color: rgba(188, 187, 187, 0.29);
+    border-radius: 10px;
+    flex-shrink: 0;   /* MUHIM */
+}
+
+
+.basket-cart-img img{
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.product-discount-badge{
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #008ECC;
-    border-radius: 0 10px 0 10px;
-    padding: 10px 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-}
-
-.product-card-info{
-    flex: 3;
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.product-card-prices{
-    display: flex;
-    flex-direction: column;
-}
-
-.product-card-btn{
-    display: flex;
-    user-select: none;
-    align-items: center;
-    justify-content: center;
-    background-color: #008ECC;
-    height: 40px;
-    width: 48px;
-    border-radius: 10px;
-}
-
-.product-card-btn>img{
-    height: 25px;
-    width: 22px;
-}
-
-.product-card-btn:active{
-    transform: scale(1.04);
-    transition-duration: 0.1s;
-}
-
-.body-row{
-    display: flex;
-    margin: 20px;
-    gap: 20px;
-}
-
-.left-side{
+/* ENG ASOSIY QISM */
+.basket-cart-info{
     flex: 1;
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-}
-.left-side-container{
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 15px 10px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.1);
+    min-width: 0;   /* flex ichida juda MUHIM */
 }
 
-.left-side-title{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.basket-cart-title p,
+.basket-cart-bottom p{
+    min-width: 0;
+    word-break: break-word;
 }
-.product-category-items{
-    gap: 5px;
+
+
+.basket-cart-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  /* checkbox yuqoriroq turadi */
+    gap: 16px;
+}
+
+.basket-cart-title p{
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+/* pastki bloklar */
+.basket-cart-price{
     display: flex;
     flex-direction: column;
-}
-.category-item-btn {
-    padding: 7px 10px;
-    color: #6b6b6b;
-    background: #ebeff1;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+    gap: 8px;
 }
 
-.category-item-btn:active{
-    transform: scale(1.08);
-    transition-duration: 0.2s;
-}
-
-.category-item-btn.selected {
-    box-shadow:
-            inset -1px 0 0 #008ecc,
-            inset 5px 0 0 #008ecc,
-            inset 0 -1px 0 #008ecc,
-            inset 0 1px 0 #008ecc;
-}
-.price-input {
-    display: flex;
-    gap: 12px;
-}
-
-.price-filter-input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid #d0d0d0;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
-    -moz-appearance: textfield;
-}
-.price-filter-input::-webkit-outer-spin-button,
-.price-filter-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+.basket-cart-price p{
     margin: 0;
 }
-.price-filter-input:focus {
-    border-color: #999;
+
+/* seller chapda, delete o'ngda */
+.basket-cart-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
 }
 
+.basket-cart-bottom p{
+    flex: 1;
+    min-width: 0;
+}
 
+/* delete tugma */
+.basket-delete{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+/* checkbox – sizing/joylashuv */
+.basket-check{
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+}
+
+.order-card {
+    width: 420px;
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    background-color: #F3F9FB;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.order-info {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    /*width: 100%;*/
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.muted {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.free {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.add-to-cart {
+    width: 100%;
+    background-color: #0A8ED9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:active {
+    transform: scale(1.04);
+    transition-duration: 0.2s;
+}
+.small-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.my-basket-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .footer {
     background: linear-gradient(180deg, #071c2f, #061726);
     color: #ffffff;
@@ -370,6 +438,7 @@ body{
 }
 
 
+
 @media (max-width: 900px) {
     .footer-info {
         grid-template-columns: 1fr 1fr;
@@ -409,6 +478,18 @@ body{
         flex-direction: column;
     }
 
+}
+
+@media (max-width:990px) {
+    .my-basket-body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .order-card{
+        width: 80%;
+        height: 200px;
+    }
 }
 
 /*tablet*/

@@ -5,77 +5,94 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mahsulotlar</title>
+    <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="checkout.css">
 
 </head>
-<body data-page="products">
-    <div class="top-welcome my-padding">
-        <p class="body-grey">Tech Housega xush kelibsiz!</p>
-        <div class="top-welcome-items" id="topWelcomeItems"></div>
-    </div>
+<body data-page="checkout">
+<div class="top-welcome my-padding">
+    <p class="body-grey">Tech Housega xush kelibsiz!</p>
+    <div class="top-welcome-items" id="topWelcomeItems"></div>
+</div>
 
-    <div class="container">
-        <nav class="navbar">
-            <a href="../../home/presentation/home.html">
-                <div class="navbar-left unselect">
-                    <img class="logo border" src="/assets/images/applogo.png">
-                    <h3 style="color: #008ECC">Tech House</h3>
-                </div>
-            </a>
-            <div class="navbar-center">
-                <div class="search-bar border">
-                    <img class="small-icon" src="/assets/images/search.png">
-                    <input class="search-input body-grey" type="text" placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring...">
-                </div>
+<div class="container">
+    <nav class="navbar">
+        <a href="../../home/presentation/home.html">
+            <div class="navbar-left unselect">
+                <img class="logo border" src="/assets/images/applogo.png">
+                <h3 style="color: #008ECC">Tech House</h3>
             </div>
-            <div class="navbar-right">
-                <div class="auth top-welcome-item unselect">
+        </a>
+        <div class="navbar-center">
+            <div class="search-bar border">
+                <img class="small-icon" src="/assets/images/search.png">
+                <form action="../../products/presentation/products.html" method="GET">
+                    <input
+                            class="search-input body-grey"
+                            type="text"
+                            name="q"
+                            placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
+                    >
+                </form>
+
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="">
+                <div class="auth top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/person.png" alt="">
                     <p class="body-grey">Sign Up/Sign In</p>
                     <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
                 </div>
-                <a href="../../basket/presentation/basket.html"
-                   class="basket top-welcome-item unselect" style="align-items: end">
-                    <img class="small-icon" src="/assets/images/basket.png" alt="">
-                    <p class="body-grey">Cart</p>
-                </a>
-            </div>
-        </nav>
-    </div>
+            </a>
+            <a href="../../basket/presentation/basket.html"
+               class="basket top-welcome-item unselect" style="align-items: end">
+                <img class="small-icon" src="/assets/images/basket.png" alt="">
+                <p class="body-grey">Cart</p>
+            </a>
+        </div>
+    </nav>
+</div>
+<div class="divider"></div>
 
-    <div class="divider"></div>
+<div class="my-body my-screen">
+    <div class="" style="flex: 1;">
+        <div class="left">
 
-    <div class="body-row">
-        <div class="left-side">
-            <div class="left-side-container">
-                <div class="left-side-title">
-                    <img class="normal-icon" src="/assets/images/sort.png">
-                    <p class="body-medium" style="color: #008ECC">Kategoriyalar</p>
-                </div>
-                <br>
-                <div class="product-category-items"></div>
-            </div>
-            <div class="left-side-container">
-                <div class="left-side-title">
-                    <img class="normal-icon" src="/assets/images/doscount_1.png">
-                    <p class="body-medium" style="color: #008ECC">Narx</p>
-                </div>
-                <br>
-                <div class="price-input">
-                    <input type="number" class="price-filter-input" placeholder="500000">
-                    <input type="number" class="price-filter-input" placeholder="1500000">
-                </div>
-                <input type="range" min="0" max="100" value="50">
+        </div>
 
+        <div class="right">
+            <div class="order-card border">
+                <div class="order-info">
+                    <div class="row">
+                        <div class="title">Jami</div>
+                        <div class="price">6 407 000 so'm</div>
+                    </div>
+
+                    <div class="row muted">
+                        <span>Tovarlar soni</span>
+                        <span>2 ta</span>
+                    </div>
+
+                    <div class="row muted">
+                        <span>Tarifingiz</span>
+                        <span class="free">Gold</span>
+                    </div>
+                </div>
+
+                <button class="add-to-cart">
+                    Add to Card
+                    <img src="/assets/images/basket_white.png" alt="basket" class="normal-icon">
+                </button>
             </div>
         </div>
-        <div class="products"></div>
     </div>
+
+</div>
 
 <br><br>
 <footer class="footer">
@@ -129,8 +146,7 @@
     </div>
 </footer>
 
-<script type="module" src="../../home/viewmodel/home.js"></script>
-<script type="module" src="../../products/viewmodel/products.js"></script>
-
+<script type="module" src="/ui/home/viewmodel/home.js"></script>
+<script type="module" src="/ui/detail/viewmodel/detail.js"></script>
 </body>
 </html>
