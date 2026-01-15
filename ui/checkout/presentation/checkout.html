@@ -5,13 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Checkout</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="checkout.css">
-
+    <style>
+        :root{
+            --bg: #F6F7F8;
+            --card: #FFFFFF;
+            --border: #ECECEC;
+            --border-strong: #E3E3E3;
+            --input-border: #B9B9B9;
+            --primary: #2F80ED;
+        }
+    </style>
 </head>
 <body data-page="checkout">
 <div class="top-welcome my-padding">
@@ -60,9 +69,83 @@
 <div class="divider"></div>
 
 <div class="my-body my-screen">
-    <div class="" style="flex: 1;">
+    <div class="my-screen-child">
         <div class="left">
+            <div class="page">
 
+                <!-- 1) Sizning ma'lumotlaringiz -->
+                <section class="card">
+                    <h2 class="card-title">Sizning ma’lumotlaringiz</h2>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label class="field-label body-medium semibold" for="name">Ism</label>
+                            <input class="text-input" id="name" type="text" value="Hakimbek" />
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label body-medium semibold" for="surname">Familiya</label>
+                            <input class="text-input" id="surname" type="text" value="Hakimbek" />
+                        </div>
+
+                        <div class="field">
+                            <label class="field-label body-medium semibold" for="phone">Raqam</label>
+                            <input class="text-input" id="phone" type="tel" value="+998 91 082 80 81" />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2) Qabul qilish usuli -->
+                <section class="card">
+                    <h2 class="card-title">Qabul qilish usuli</h2>
+
+                    <div class="method-grid">
+                        <input class="sr-only method-choice" type="checkbox" id="delivery" checked />
+                        <label class="method-tile" for="delivery">
+                            <div class="small-icon" aria-hidden="true"><img src="/assets/images/delivery_truck_1.png"></div>
+                            <div class="body-grey">Yetkazib berish</div>
+                        </label>
+
+                        <input class="sr-only method-choice" type="checkbox" id="pickup" checked />
+                        <label class="method-tile" for="pickup">
+                            <div class="sticker" aria-hidden="true">📦</div>
+                            <div class="body-grey">Olib ketish</div>
+                        </label>
+                    </div>
+
+                    <div class="address-row">
+                        <div class="sticker small" aria-hidden="true"><img src="/assets/images/location.png"></div>
+                        <div class="address-text">
+                            <div class="body-medium semibold">Manzil tanlash</div>
+                            <div class="body-grey">Sizda hozircha manzillar yo‘q</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3) To'lov usulini tanlang -->
+                <section class="card">
+                    <h2 class="card-title">To‘lov usulini tanlang</h2>
+
+                    <div class="payment-list">
+                        <div>
+                            <input class="sr-only payment-choice" type="radio" name="payment" id="pay-card" />
+                            <label class="payment-option" for="pay-card">
+                                <div class="body-medium option-title">Karta</div>
+                                <div class="body-grey option-sub">UZCARD, HUMO, Visa, Mastercard, Korporativ karta</div>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input class="sr-only payment-choice" type="radio" name="payment" id="pay-cod" checked />
+                            <label class="payment-option" for="pay-cod">
+                                <div class="body-medium option-title">Olinganda to‘lov</div>
+                                <div class="body-grey option-sub">Naqd yoki karta orqali to‘lasa bo‘ladi</div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </div>
 
         <div class="right">
