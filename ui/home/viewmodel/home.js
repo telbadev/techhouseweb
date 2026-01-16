@@ -85,37 +85,26 @@ function renderTopWelcomeItems() {
 
 
 function renderCategories() {
-    const container_categories = document.getElementById('categories-container');
-    let selectedCategory = null;
+    const container = document.getElementById('categories-container');
+    container.innerHTML = '';
+
     categories.forEach(category => {
-        const div = document.createElement('div');
-        div.classList.add('category-btn');
+        const card = document.createElement('div');
+        card.classList.add('category-card');
 
-        div.innerHTML = `
-        <p class="body-grey" style="color: #222222">${category.category_name}</p>
-        <img class="small-icon" src="/assets/images/bottom-arrow.png">
-    `;
+        card.innerHTML = `
+            <div class="category-circle">
+                <img src="${category.img}" alt="${category.category_name}">
+            </div>
+            <p class="body-medium">${category.category_name}</p>
+        `;
 
-        // Bosilganda
-        div.addEventListener('click', () => {
-            // Agar oldin tanlangan bo'lsa, o'chiramiz
-            if (selectedCategory && selectedCategory !== div) {
-                selectedCategory.classList.remove('selected');
-            }
 
-            // Tanlangan elementni toggle qilamiz
-            if (div.classList.contains('selected')) {
-                div.classList.remove('selected');
-                selectedCategory = null;
-            } else {
-                div.classList.add('selected');
-                selectedCategory = div;
-            }
-        });
 
-        container_categories.appendChild(div);
+        container.appendChild(card);
     });
 }
+
 
 function renderProducts() {
     const productsContainers = document.querySelectorAll(".products");
