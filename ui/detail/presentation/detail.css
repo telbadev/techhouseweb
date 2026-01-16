@@ -177,18 +177,19 @@ body{
 }
 
 .product-img-detail{
-    height: auto;
+    height: 400px;
     padding: 10px;
     display: flex;
     gap: 20px;
     width: 100%;
+    /*background-color: red;*/
     overflow: visible;
 }
 
 .product-img{
     /*flex: ;*/
-    height: 330px;
-    width: 50%;
+    height: auto    ;
+    width: 60%;
     background-color: #EFEFEF;
     display: flex;
     border-radius: 15px;
@@ -232,7 +233,7 @@ body{
 }
 
 .product-info{
-    /*flex: 3;*/
+    flex: 1;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
@@ -278,6 +279,7 @@ body{
 
 .product-images{
     display: flex;
+    /*justify-content: space-between;*/
     flex-direction: column;
     gap:  10px;
 }
