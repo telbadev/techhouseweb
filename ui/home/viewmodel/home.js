@@ -159,5 +159,5 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `../../detail/presentation/detail.html`;
+    location.href = `/techhouseweb/ui/detail/presentation/detail.html`;
 });
