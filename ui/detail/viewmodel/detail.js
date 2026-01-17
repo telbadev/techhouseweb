@@ -1,46 +1,10 @@
-// import { renderTopWelcomeItems } from "/ui/home/viewmodel/home.js";
+import { products } from "../../../data/products.js";
+
 
 const categories = [
     { category_name: "Tozalash uskunalari", category_id: 1, img: "/assets/images/cleaner.png", },
     { category_name: "Changyutgich", category_id: 2,img: "/assets/images/heater.png", },
     { category_name: "Changyutgich Bosch BGS7RCL", category_id: 3,img: "/assets/images/heater.png", },
-];
-const products = [
-    {
-        name: "Changyutgich Bosch BGS7RCL",
-        image: "/assets/images/cleaner.png",
-        price: "6 407 000 so'm",
-        oldPrice: "8 407 000 so'm",
-        discount: "25%"
-    },
-    {
-        name: "Kir yuvish mashinasi LG",
-        image: "/assets/images/cleaner.png",
-        price: "5 200 000 so'm",
-        oldPrice: "6 000 000 so'm",
-        discount: "15%"
-    },
-    {
-        name: "Muzlatgich Samsung",
-        image: "/assets/images/cleaner.png",
-        price: "9 800 000 so'm",
-        oldPrice: "11 000 000 so'm",
-        discount: "10%"
-    },
-    {
-        name: "Muzlatgich Samsung",
-        image: "/assets/images/cleaner.png",
-        price: "9 800 000 so'm",
-        oldPrice: "11 000 000 so'm",
-        discount: "10%"
-    },
-    {
-        name: "Muzlatgich Samsung",
-        image: "/assets/images/cleaner.png",
-        price: "9 800 000 so'm",
-        oldPrice: "11 000 000 so'm",
-        discount: "10%"
-    },
 ];
 
 function renderCategories() {
@@ -69,7 +33,7 @@ function renderProducts() {
     productsContainers.forEach(container => {
         products.forEach(product => {
             container.innerHTML += `
-            <div class="product-card" data-id="000">
+            <div class="product-card" data-id="${product.id}">
                 <div class="product-card-img">
                     <img src="${product.image}" alt="${product.name}">
                     <span class="product-discount-badge">${product.discount}</span>
@@ -98,9 +62,38 @@ function renderProducts() {
     });
 }
 
+function getProductData() {
+    const params = new URLSearchParams(location.search);
+    const id = Number(params.get("id"));
+    const product = products.find(p => p.id === id);
+    if(!product) {
+        console.log('Mahsulot topilmadi')
+    } else return product;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-    // renderTopWelcomeItems();
     renderCategories();
     renderProducts();
+    const response = getProductData()
+    document.querySelector("#productName").textContent = response.name;
+    document.querySelector("#productPrice").textContent = response.price.toLocaleString("uz-UZ") + " so'm";
+    document.querySelector("#productPrice2").textContent = response.price.toLocaleString("uz-UZ") + " so'm";
+    document.querySelector("#productImg").src = response.image;
+    document.querySelector("#productImg2").src = response.image;
+    document.querySelector("#productImg3").src = response.image;
+    document.querySelector("#productImg4").src = response.image;
+    document.querySelector("#productOldPrice").textContent = response.oldPrice;
+    document.querySelector("#productDiscount").textContent = response.discount;
+    document.querySelector("#productDiscount2").textContent = response.discount;
+
 });
+
+document.addEventListener("click", (e) => {
+    const card = e.target.closest(".product-card");
+    if (!card) return;
+
+    const id = card.dataset.id;
+    location.href = `/techhouseweb/ui/detail/presentation/detail.html?id=${id}`;
+});
+
+

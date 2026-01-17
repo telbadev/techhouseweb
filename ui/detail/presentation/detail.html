@@ -69,28 +69,28 @@
                 <div style="display: flex; gap: 10px;flex: 2;">
                     <div class="product-images">
                         <div class="product-images-item">
-                            <img src="/assets/images/cleaner.png" alt="">
+                            <img id="productImg2" src="/assets/images/cleaner.png" alt="">
                         </div>
                         <div class="product-images-item">
-                            <img src="/assets/images/cleaner.png" alt="">
+                            <img id="productImg3" src="/assets/images/cleaner.png" alt="">
                         </div>
                         <div class="product-images-item">
-                            <img src="/assets/images/cleaner.png" alt="">
+                            <img id="productImg4" src="/assets/images/cleaner.png" alt="">
                         </div>
                     </div>
                     <div class="product-img">
-                        <img src="/assets/images/cleaner.png" alt="">
+                        <img id="productImg" src="" alt="">
                     </div>
                 </div>
                 <div class="product-info">
                     <div class="product-info-text" style="display: flex; flex-direction: column;gap: 10px;">
                         <div class="product-title-discounts">
                             <div class="product-title-discount" style="color: white;background-color: #E30000">Chegirma</div>
-                            <div class="product-title-discount" style="color: black;background-color: #FFCC00">82%</div>
+                            <div class="product-title-discount" style="color: black;background-color: #FFCC00" id="productDiscount" >82%</div>
                         </div>
-                        <p class="body-medium">Biryusa 2000MH Germaniskiy</p>
-                        <p class="body-medium">Narx: <span>6 407 000 so'm</span></p>
-                        <p class="body-medium">Eski narx: <span style="color: red;text-decoration: line-through">77 807 000 so'm</span></p>
+                        <p class="body-medium" id="productName"></p>
+                        <p class="body-medium">Narx: <span id="productPrice" style="font-weight: bold;font-size: 20px">6 407 000 so'm</span></p>
+                        <p class="body-medium">Eski narx: <span id="productOldPrice" style="color: red;text-decoration: line-through"></span></p>
                     </div>
                     <div class="add-to-cart-btn">
                         <p class="body-medium" style="color: white">Add to Cart</p>
@@ -111,11 +111,11 @@
                         </div>
                         <div class="row">
                             <p class="body-grey">Chegirma: </p>
-                            <p class="body-medium">12%</p>
+                            <p class="body-medium" id="productDiscount2">12%</p>
                         </div>
                         <div class="row">
                             <p class="body-grey">Narx: </p>
-                            <p class="body-medium">6 000 000 so’m</p>
+                            <p class="body-medium" id="productPrice2">6 000 000 so’m</p>
                         </div>
 
                     </div>
@@ -191,6 +191,7 @@
     </footer>
 
     <script type="module" src="/ui/home/viewmodel/home.js"></script>
-    <script type="module" src="/ui/detail/viewmodel/detail.js"></script>
+    <script type="module" src="../viewmodel/detail.js"></script>
+
 </body>
 </html>
