@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House Likes</title>
+    <!-- Font Awesome for map icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="like.css" rel="stylesheet">
+</head>
+<body data-page="like">
+<div class="top-welcome my-padding">
+    <p class="body-grey">Tech Housega xush kelibsiz!</p>
+    <div class="top-welcome-items" id="topWelcomeItems"></div>
+</div>
+<div class="container" style="justify-content: center;align-items: center">
+    <nav class="navbar">
+        <a href="/index.html">
+            <div class="navbar-left unselect">
+                <img class="logo border" src="/assets/images/applogo.png" alt="" width="574" height="480">
+                <h3 style="color: #008ECC">Tech House</h3>
+            </div>
+        </a>
+        <div class="navbar-center">
+            <div class="search-bar border">
+                <img class="small-icon" src="/assets/images/search.png">
+                <form action="../../ui/products/presentation/products.html" method="GET">
+                    <input
+                            class="search-input body-grey"
+                            type="text"
+                            name="q"
+                            placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
+                    >
+                </form>
+
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="">
+                <div class="auth top-welcome-item unselect" style="align-items: end">
+                    <img class="small-icon" src="/assets/images/person.png" alt="">
+                    <p class="body-grey">Sign Up/Sign In</p>
+                    <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
+                </div>
+            </a>
+            <a href="../../ui/basket/presentation/basket.html"
+               class="basket top-welcome-item unselect" style="align-items: end">
+                <img class="small-icon" src="/assets/images/basket.png" alt="">
+                <p class="body-grey">Cart</p>
+            </a>
+            <a href="like.html"
+               class="basket top-welcome-item unselect" style="align-items: end">
+                <img class="small-icon" src="/assets/images/like.png" alt="">
+                <p class="body-grey">Yoqqan</p>
+            </a>
+        </div>
+    </nav>
+</div>
+<div class="divider"></div>
+<div class="container">
+    <div class="nav-actions">
+        <a class="nac-action" href="../../index.html">Asosiy</a>
+        <a class="nac-action" href="../../ui/products/presentation/products.html">Mahsulotlar</a>
+        <a class="nac-action" href="../../index.html#membershipCardsTitle">Narxlar</a>
+        <a class="nac-action" href="../../index.html#serviceCardsTitle">Xizmatlar</a>
+        <a class="nac-action" href="../../ui/location/location.html">Manzillar</a>
+        <a class="nac-action" href="../../ui/footer_links/about.html">Biz haqimizda</a>
+    </div>
+</div>
+<div class="divider"></div>
+<section class="like" style="max-width: 1200px;width: 100%;margin: 0 auto;">
+
+    <h1>Saralanganlar</h1>
+    <div class="products"></div>
+
+</section>
+<br><br>
+<footer class="footer">
+    <div class="">
+        <div class="footer-info">
+            <div class="footer-col brand">
+                <h2>Tech House</h2>
+                <p>Savollaringiz bo‘lsa, javob berishga tayyormiz!</p>
+                <p class="phone">+998 91 082 80 81</p>
+                <p class="work-time">Ish vaqti: Har kuni 09:00 - 21:00</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Ma'lumot</h3>
+                <ul>
+                    <li><a href="/ui/footer_links/about.html">Biz haqimizda</a></li>
+                    <li><a href="/ui/footer_links/warranty.html">Kafolat</a></li>
+                    <li><a href="/index.html#discountProducts">Aksiya</a></li>
+                    <li><a href="/ui/footer_links/stores.html">Bizning do‘konlarimiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Xizmatlar</h3>
+                <ul>
+                    <li><a href="/ui/footer_links/service.html">Xizmatlar</a></li>
+                    <li><a href="/ui/footer_links/payment.html">To‘lov usullari</a></li>
+                    <li><a href="/ui/footer_links/partners.html">Hamkorlik</a></li>
+                    <li><a href="/ui/footer_links/returns.html">Qaytarish usullari</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Mijozlar uchun</h3>
+                <ul>
+                    <li><a href="/ui/footer_links/delivery.html">Yetkazib berish</a></li>
+                    <li><a href="https://t.me/hakimbekdev_contactbot">Biz bilan bog‘lanish</a></li>
+                    <li><a href="https://t.me/hakimbekdev_contactbot">Service center</a></li>
+                    <li><a href="https://www.termsfeed.com/live/67454638-6bbb-417a-a52a-9b0b956cb2f2">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-container">
+            <img style="height: 30px;width: 50px;" src="/assets/images/insta.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/telegram.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/tiktok.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/x.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/facebook.png" alt="">
+        </div>
+    </div>
+</footer>
+<script type="module" src="../../ui/home/viewmodel/home.js"></script>
+</body>
+</html>

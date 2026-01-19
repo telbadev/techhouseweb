@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCleaners()
         renderProducts();
     }
+    if(page==="like")renderProducts()
 
     if (page === "products") {
         // renderProducts();
@@ -174,7 +175,7 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `/techhouseweb/ui/detail/presentation/detail.html?id=${id}`;
+    location.href = `ui/detail/presentation/detail.html?id=${id}`;
 });
 
 document.addEventListener("click", (e) => {
