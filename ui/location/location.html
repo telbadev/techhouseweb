@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House Locations</title>
+    <!-- Font Awesome for map icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="location.css" rel="stylesheet">
+</head>
+<body>
+    <div class="top-welcome my-padding">
+        <p class="body-grey">Tech Housega xush kelibsiz!</p>
+        <div class="top-welcome-items" id="topWelcomeItems"></div>
+    </div>
+    <div class="container" style="justify-content: center;align-items: center">
+        <nav class="navbar">
+            <a href="../../home/presentation/home.html">
+                <div class="navbar-left unselect">
+                    <img class="logo border" src="/assets/images/applogo.png">
+                    <h3 style="color: #008ECC">Tech House</h3>
+                </div>
+            </a>
+            <div class="navbar-center">
+                <div class="search-bar border">
+                    <img class="small-icon" src="/assets/images/search.png">
+                    <form action="ui/products/presentation/products.html" method="GET">
+                        <input
+                                class="search-input body-grey"
+                                type="text"
+                                name="q"
+                                placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
+                        >
+                    </form>
+
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="">
+                    <div class="auth top-welcome-item unselect" style="align-items: end">
+                        <img class="small-icon" src="/assets/images/person.png" alt="">
+                        <p class="body-grey">Sign Up/Sign In</p>
+                        <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
+                    </div>
+                </a>
+                <a href="ui/basket/presentation/basket.html"
+                   class="basket top-welcome-item unselect" style="align-items: end">
+                    <img class="small-icon" src="/assets/images/basket.png" alt="">
+                    <p class="body-grey">Cart</p>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="divider"></div>
+    <div class="container">
+        <div class="nav-actions">
+            <a class="nac-action" href="../../index.html">Asosiy</a>
+            <a class="nac-action" href="../../ui/products/presentation/products.html">Mahsulotlar</a>
+            <a class="nac-action" href="../../index.html#membershipCardsTitle">Narxlar</a>
+            <a class="nac-action" href="../../index.html#serviceCardsTitle">Xizmatlar</a>
+            <a class="nac-action" href="../../ui/location/location.html">Manzillar</a>
+            <a class="nac-action" href="../../ui/footer_links/about.html">Biz haqimizda</a>
+        </div>
+    </div>
+    <div class="divider"></div>
+<section class="locations">
+
+    <h1>Bizning Do‘konlarimiz</h1>
+    <p class="subtitle">Tech House do‘konlarini o‘zingizga eng yaqin joydan toping</p>
+
+    <div class="location-grid">
+
+        <a class="location-card"style="text-decoration: none;" href="https://yandex.uz/maps/10335/tashkent/house/YkAYdABpTkIEQFprfX9wd31qYw==/?ll=69.279772%2C41.316197&z=16">
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="Toshkent Markaz">
+            <div class="card-content">
+                <h3><i class="fas fa-location-dot"></i> Toshkent Markaz</h3>
+                <p>Amir Temur ko‘chasi, 15-uy</p>
+                <span>09:00 – 21:00</span>
+            </div>
+        </a>
+
+        <a class="location-card" style="text-decoration: none" href="https://yandex.uz/maps/10335/tashkent/search/Chilonzor/?ll=69.213584%2C41.277324&sll=69.279772%2C41.316197&sspn=0.018153%2C0.007879&z=14.77">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Chilonzor">
+            <div class="card-content">
+                <h3><i class="fas fa-location-dot"></i> Chilonzor</h3>
+                <p>Chilonzor tumani, Bunyodkor ko‘chasi</p>
+                <span>09:00 – 20:00</span>
+            </div>
+        </a>
+
+        <a class="location-card" style="text-decoration: none" href="https://yandex.uz/maps/10335/tashkent/geo/1508578786/?ll=69.315948%2C41.374950&z=15.64">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Yunusobod">
+            <div class="card-content">
+                <h3><i class="fas fa-location-dot"></i> Yunusobod</h3>
+                <p>Yunusobod 19-mavze</p>
+                <span>10:00 – 21:00</span>
+            </div>
+        </a>
+
+        <div class="location-card" style="text-decoration: none" href="https://yandex.uz/maps/org/1223343165/?ll=66.975709%2C39.654941&mode=search&sctx=ZAAAAAgBEAAaKAoSCSXP9X04VFFAEU7RkVz%2Br0RAEhIJdLM%2FUG7blz8RYFj%2BfFuwhD8iBgABAgMEBSgKOABAo58GSAFqAnV6nQHNzMw9oAEAqAEAvQEOpJ%2BrwgEFvfiqxwSCAhNzYW1hcnFhbmQgIHJlZ2lzdG9uigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=66.975709%2C39.654941&sspn=0.011649%2C0.005183&text=samarqand%20%20registon&z=16.64">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="Samarqand">
+            <div class="card-content">
+                <h3><i class="fas fa-location-dot"></i> Samarqand</h3>
+                <p>Registon ko‘chasi, 7-uy</p>
+                <span>09:00 – 20:00</span>
+            </div>
+        </div>
+
+        <div class="location-card" style="text-decoration: none" href="https://yandex.uz/maps/org/165218335464/?ll=71.725322%2C40.416141&mode=search&sctx=ZAAAAAgBEAAaKAoSCSXP9X04VFFAEU7RkVz%2Br0RAEhIJdLM%2FUG7blz8RYFj%2BfFuwhD8iBgABAgMEBSgKOABAo58GSAFqAnV6nQHNzMw9oAEAqAEAvQEOpJ%2BrwgEFvfiqxwSCAhNzYW1hcnFhbmQgIHJlZ2lzdG9uigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=66.975709%2C39.654941&sspn=0.011649%2C0.005183&text=samarqand%20%20registon&z=16.64">
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="Farg‘ona">
+            <div class="card-content">
+                <h3><i class="fas fa-location-dot"></i> Farg‘ona</h3>
+                <p>Mustaqillik ko‘chasi, 22-uy</p>
+                <span>09:00 – 19:00</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+<br><br>
+<footer class="footer">
+    <div class="">
+        <div class="footer-info">
+            <div class="footer-col brand">
+                <h2>Tech House</h2>
+                <p>Savollaringiz bo‘lsa, javob berishga tayyormiz!</p>
+                <p class="phone">+998 91 082 80 81</p>
+                <p class="work-time">Ish vaqti: Har kuni 09:00 - 21:00</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Ma'lumot</h3>
+                <ul>
+                    <li><a href="ui/footer_links/about.html">Biz haqimizda</a></li>
+                    <li><a href="ui/footer_links/warranty.html">Kafolat</a></li>
+                    <li><a href="#discountProducts">Aksiya</a></li>
+                    <li><a href="ui/footer_links/stores.html">Bizning do‘konlarimiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Xizmatlar</h3>
+                <ul>
+                    <li><a href="ui/footer_links/service.html">Xizmatlar</a></li>
+                    <li><a href="ui/footer_links/payment.html">To‘lov usullari</a></li>
+                    <li><a href="ui/footer_links/partners.html">Hamkorlik</a></li>
+                    <li><a href="ui/footer_links/returns.html">Qaytarish usullari</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Mijozlar uchun</h3>
+                <ul>
+                    <li><a href="ui/footer_links/delivery.html">Yetkazib berish</a></li>
+                    <li><a href="https://t.me/hakimbekdev_contactbot">Biz bilan bog‘lanish</a></li>
+                    <li><a href="https://t.me/hakimbekdev_contactbot">Service center</a></li>
+                    <li><a href="https://www.termsfeed.com/live/67454638-6bbb-417a-a52a-9b0b956cb2f2">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-container">
+            <img style="height: 30px;width: 50px;" src="/assets/images/insta.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/telegram.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/tiktok.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/x.png" alt="">
+            <img style="height: 30px;width: 50px;" src="/assets/images/facebook.png" alt="">
+        </div>
+    </div>
+</footer>
+<script type="module" src="../../ui/home/viewmodel/home.js"></script>
+</body>
+</html>
