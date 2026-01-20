@@ -55,8 +55,6 @@ function renderProducts(list) {
   `).join("");
 }
 
-
-
 function renderCategories() {
     const container = document.querySelector(".product-category-items");
     if (!container) return;
@@ -122,4 +120,14 @@ function renderCategories() {
 document.addEventListener("DOMContentLoaded", () => {
     renderCategories();
     renderProducts(products);
+});
+
+const BASE_URL = location.origin;
+
+document.addEventListener("click", (e) => {
+    const card = e.target.closest(".product-card");
+    if (!card) return;
+
+    const id = card.dataset.id;
+    location.href = `../../detail/presentation/detail.html?id=${id}`;
 });

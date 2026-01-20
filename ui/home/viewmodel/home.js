@@ -169,13 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+const BASE_URL = location.origin;
+
 document.addEventListener("click", (e) => {
     const card = e.target.closest(".product-card");
-
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `ui/detail/presentation/detail.html?id=${id}`;
+    location.href = `${BASE_URL}/ui/detail/presentation/detail.html?id=${id}`;
 });
 
 document.addEventListener("click", (e) => {
@@ -184,5 +185,5 @@ document.addEventListener("click", (e) => {
     if (!category) return;
 
     const cat_id = category.dataset.id;
-    location.href = `/techhouseweb/ui/products/presentation/products.html?id=${cat_id}`;
+    location.href = `${BASE_URL}/ui/products/presentation/products.html?id=${cat_id}`;
 });

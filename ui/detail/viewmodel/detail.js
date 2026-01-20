@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+const BASE_URL = location.origin;
+
 document.addEventListener("click", (e) => {
     const card = e.target.closest(".product-card");
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `/techhouseweb/ui/detail/presentation/detail.html?id=${id}`;
+    location.href = `/ui/detail/presentation/detail.html?id=${id}`;
 });
-
-
