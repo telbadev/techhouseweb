@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="like.css" rel="stylesheet">
+    <link href="../style/like.css" rel="stylesheet">
 </head>
 <body data-page="like">
 <div class="top-welcome my-padding">
@@ -28,7 +28,7 @@
         <div class="navbar-center">
             <div class="search-bar border">
                 <img class="small-icon" src="/assets/images/search.png">
-                <form action="../../ui/products/presentation/products.html" method="GET">
+                <form action="products.html" method="GET">
                     <input
                             class="search-input body-grey"
                             type="text"
@@ -47,7 +47,7 @@
                     <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
                 </div>
             </a>
-            <a href="../../ui/basket/presentation/basket.html"
+            <a href="basket.html"
                class="basket top-welcome-item unselect" style="align-items: end">
                 <img class="small-icon" src="/assets/images/basket.png" alt="">
                 <p class="body-grey">Cart</p>
@@ -64,11 +64,11 @@
 <div class="container">
     <div class="nav-actions">
         <a class="nac-action" href="../../index.html">Asosiy</a>
-        <a class="nac-action" href="../../ui/products/presentation/products.html">Mahsulotlar</a>
+        <a class="nac-action" href="products.html">Mahsulotlar</a>
         <a class="nac-action" href="../../index.html#membershipCardsTitle">Narxlar</a>
         <a class="nac-action" href="../../index.html#serviceCardsTitle">Xizmatlar</a>
-        <a class="nac-action" href="../../ui/location/location.html">Manzillar</a>
-        <a class="nac-action" href="../../ui/footer_links/about.html">Biz haqimizda</a>
+        <a class="nac-action" href="location.html">Manzillar</a>
+        <a class="nac-action" href="../footer_links/about.html">Biz haqimizda</a>
     </div>
 </div>
 <div class="divider"></div>
@@ -128,6 +128,22 @@
         </div>
     </div>
 </footer>
-<script type="module" src="../../ui/home/viewmodel/home.js"></script>
+<script type="module" src="../scripts/home.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector(".search-input");
+        if (!input) return;
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const q = input.value.trim();
+                if (!q) return;
+
+                location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

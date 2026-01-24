@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./detail.css">
+    <link rel="stylesheet" href="../style/detail.css">
 
 </head>
 <body data-page="detail">
@@ -21,7 +21,7 @@
 
 <div class="container">
     <nav class="navbar">
-        <a href="../../../index.html">
+        <a href="../../index.html">
             <div class="navbar-left unselect">
                 <img class="logo border" src="/assets/images/applogo.png">
                 <h3 style="color: #008ECC">Tech House</h3>
@@ -30,7 +30,7 @@
         <div class="navbar-center">
             <div class="search-bar border">
                 <img class="small-icon" src="/assets/images/search.png">
-                <form action="../../products/presentation/products.html" method="GET">
+                <form action="products.html" method="GET">
                     <input
                             class="search-input body-grey"
                             type="text"
@@ -49,7 +49,7 @@
                     <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
                 </div>
             </a>
-            <a href="../../basket/presentation/basket.html"
+            <a href="basket.html"
                class="basket top-welcome-item unselect" style="align-items: end">
                 <img class="small-icon" src="/assets/images/basket.png" alt="">
                 <p class="body-grey">Cart</p>
@@ -153,27 +153,27 @@
                 <div class="footer-col">
                     <h3>Ma'lumot</h3>
                     <ul>
-                        <li><a href="../../footer_links/about.html">Biz haqimizda</a></li>
-                        <li><a href="../../footer_links/warranty.html">Kafolat</a></li>
-                        <li><a href="../../../index.html#discountProducts">Aksiya</a></li>
-                        <li><a href="../../footer_links/stores.html">Bizning do‘konlarimiz</a></li>
+                        <li><a href="../footer_links/about.html">Biz haqimizda</a></li>
+                        <li><a href="../footer_links/warranty.html">Kafolat</a></li>
+                        <li><a href="../../index.html#discountProducts">Aksiya</a></li>
+                        <li><a href="../footer_links/stores.html">Bizning do‘konlarimiz</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h3>Xizmatlar</h3>
                     <ul>
-                        <li><a href="../../footer_links/service.html">Xizmatlar</a></li>
-                        <li><a href="../../footer_links/payment.html">To‘lov usullari</a></li>
-                        <li><a href="../../footer_links/partners.html">Hamkorlik</a></li>
-                        <li><a href="../../footer_links/returns.html">Qaytarish usullari</a></li>
+                        <li><a href="../footer_links/service.html">Xizmatlar</a></li>
+                        <li><a href="../footer_links/payment.html">To‘lov usullari</a></li>
+                        <li><a href="../footer_links/partners.html">Hamkorlik</a></li>
+                        <li><a href="../footer_links/returns.html">Qaytarish usullari</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h3>Mijozlar uchun</h3>
                     <ul>
-                        <li><a href="../../footer_links/delivery.html">Yetkazib berish</a></li>
+                        <li><a href="../footer_links/delivery.html">Yetkazib berish</a></li>
                         <li><a href="https://t.me/hakimbekdev_contactbot">Biz bilan bog‘lanish</a></li>
                         <li><a href="https://t.me/hakimbekdev_contactbot">Service center</a></li>
                         <li><a href="https://www.termsfeed.com/live/67454638-6bbb-417a-a52a-9b0b956cb2f2">Privacy Policy</a></li>
@@ -190,8 +190,26 @@
         </div>
     </footer>
 
-    <script type="module" src="/ui/home/viewmodel/home.js"></script>
-    <script type="module" src="../viewmodel/detail.js"></script>
+
+<script type="module" src="../../ui/scripts/detail.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector(".search-input");
+        if (!input) return;
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const q = input.value.trim();
+                if (!q) return;
+
+                location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
+            }
+        });
+    });
+</script>
+
+
+
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { products } from "../../../data/products.js";
+import { products } from "../../data/products.js";
 
 
 const categories = [
@@ -95,5 +95,5 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `/ui/detail/presentation/detail.html?id=${id}`;
+    location.href = `/techhouseweb/ui/pages/detail.html?id=${id}`;
 });

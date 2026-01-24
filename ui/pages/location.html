@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="location.css" rel="stylesheet">
+    <link href="../style/location.css" rel="stylesheet">
 </head>
 <body>
     <div class="top-welcome my-padding">
@@ -28,7 +28,7 @@
             <div class="navbar-center">
                 <div class="search-bar border">
                     <img class="small-icon" src="/assets/images/search.png">
-                    <form action="../../ui/products/presentation/products.html" method="GET">
+                    <form action="products.html" method="GET">
                         <input
                                 class="search-input body-grey"
                                 type="text"
@@ -47,12 +47,12 @@
                         <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
                     </div>
                 </a>
-                <a href="../basket/presentation/basket.html"
+                <a href="basket.html"
                    class="basket top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/basket.png" alt="">
                     <p class="body-grey">Cart</p>
                 </a>
-                <a href="../../ui/like/like.html"
+                <a href="like.html"
                    class="basket top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/like.png" alt="">
                     <p class="body-grey">Yoqqan</p>
@@ -64,11 +64,11 @@
     <div class="container">
         <div class="nav-actions">
             <a class="nac-action" href="../../index.html">Asosiy</a>
-            <a class="nac-action" href="../../ui/products/presentation/products.html">Mahsulotlar</a>
+            <a class="nac-action" href="products.html">Mahsulotlar</a>
             <a class="nac-action" href="../../index.html#membershipCardsTitle">Narxlar</a>
             <a class="nac-action" href="../../index.html#serviceCardsTitle">Xizmatlar</a>
             <a class="nac-action" href="../../ui/location/location.html">Manzillar</a>
-            <a class="nac-action" href="../../ui/footer_links/about.html">Biz haqimizda</a>
+            <a class="nac-action" href="../footer_links/about.html">Biz haqimizda</a>
         </div>
     </div>
     <div class="divider"></div>
@@ -140,27 +140,27 @@
             <div class="footer-col">
                 <h3>Ma'lumot</h3>
                 <ul>
-                    <li><a href="../../ui/footer_links/about.html">Biz haqimizda</a></li>
-                    <li><a href="../../ui/footer_links/warranty.html">Kafolat</a></li>
+                    <li><a href="../footer_links/about.html">Biz haqimizda</a></li>
+                    <li><a href="../footer_links/warranty.html">Kafolat</a></li>
                     <li><a href="/index.html#discountProducts">Aksiya</a></li>
-                    <li><a href="../../ui/footer_links/stores.html">Bizning do‘konlarimiz</a></li>
+                    <li><a href="../footer_links/stores.html">Bizning do‘konlarimiz</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Xizmatlar</h3>
                 <ul>
-                    <li><a href="../../ui/footer_links/service.html">Xizmatlar</a></li>
-                    <li><a href="../../ui/footer_links/payment.html">To‘lov usullari</a></li>
-                    <li><a href="../../ui/footer_links/partners.html">Hamkorlik</a></li>
-                    <li><a href="../../ui/footer_links/returns.html">Qaytarish usullari</a></li>
+                    <li><a href="../footer_links/service.html">Xizmatlar</a></li>
+                    <li><a href="../footer_links/payment.html">To‘lov usullari</a></li>
+                    <li><a href="../footer_links/partners.html">Hamkorlik</a></li>
+                    <li><a href="../footer_links/returns.html">Qaytarish usullari</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Mijozlar uchun</h3>
                 <ul>
-                    <li><a href="../../ui/footer_links/delivery.html">Yetkazib berish</a></li>
+                    <li><a href="../footer_links/delivery.html">Yetkazib berish</a></li>
                     <li><a href="https://t.me/hakimbekdev_contactbot">Biz bilan bog‘lanish</a></li>
                     <li><a href="https://t.me/hakimbekdev_contactbot">Service center</a></li>
                     <li><a href="https://www.termsfeed.com/live/67454638-6bbb-417a-a52a-9b0b956cb2f2">Privacy Policy</a></li>
@@ -176,6 +176,22 @@
         </div>
     </div>
 </footer>
-<script type="module" src="../../ui/home/viewmodel/home.js"></script>
+<script type="module" src="../scripts/home.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.querySelector(".search-input");
+            if (!input) return;
+
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    const q = input.value.trim();
+                    if (!q) return;
+
+                    location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

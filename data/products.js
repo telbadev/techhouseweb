@@ -5,7 +5,7 @@ export const products = [
         price: 900000,
         oldPrice: "8 407 000 so'm",
         discount: "25%",
-        id: 5
+        id: 1
     },
     {
         name: "Kir yuvish mashinasi LG",

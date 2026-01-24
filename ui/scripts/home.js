@@ -1,6 +1,6 @@
-import { products } from "../../../data/products.js";
-import { categories } from "../../../data/products.js";
-import { topWelcomeData } from "../../../data/products.js";
+import { products } from "../../data/products.js";
+import { categories } from "../../data/products.js";
+import { topWelcomeData } from "../../data/products.js";
 
 
 const cleaners = [
@@ -176,7 +176,7 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `${BASE_URL}/ui/detail/presentation/detail.html?id=${id}`;
+    location.href = `/techhouseweb/ui/pages/detail.html?id=${id}`;
 });
 
 document.addEventListener("click", (e) => {
@@ -185,5 +185,5 @@ document.addEventListener("click", (e) => {
     if (!category) return;
 
     const cat_id = category.dataset.id;
-    location.href = `${BASE_URL}/ui/products/presentation/products.html?id=${cat_id}`;
+    location.href = `/techhouseweb/ui/pages/products.html?id=${cat_id}`;
 });

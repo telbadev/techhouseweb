@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="ui/home/presentation/home_style.css">
+    <link rel="stylesheet" href="ui/style/home_style.css">
 
 </head>
 <body data-page="home">
@@ -30,15 +30,11 @@
             <div class="navbar-center">
                 <div class="search-bar border">
                     <img class="small-icon" src="/assets/images/search.png">
-                    <form action="ui/products/presentation/products.html" method="GET">
-                        <input
-                                class="search-input body-grey"
-                                type="text"
-                                name="q"
-                                placeholder="Zarur narsalar, texnika va boshqa narsalarni qidiring..."
-                        >
-                    </form>
-
+                    <input
+                            class="search-input body-grey"
+                            type="text"
+                            placeholder="Qidirish..."
+                    >
                 </div>
             </div>
             <div class="navbar-right">
@@ -49,12 +45,12 @@
                         <div style="height: 18px;width: 2px;background-color: #D9D9D9"></div>
                     </div>
                 </a>
-                <a href="ui/basket/presentation/basket.html"
+                <a href="ui/pages/basket.html"
                    class="basket top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/basket.png" alt="">
                     <p class="body-grey">Cart</p>
                 </a>
-                <a href="ui/like/like.html"
+                <a href="ui/pages/like.html"
                    class="basket top-welcome-item unselect" style="align-items: end">
                     <img class="small-icon" src="/assets/images/like.png" alt="">
                     <p class="body-grey">Yoqqan</p>
@@ -66,10 +62,10 @@
     <div class="container">
         <div class="nav-actions">
             <a class="nac-action" href="index.html">Asosiy</a>
-            <a class="nac-action" href="ui/products/presentation/products.html">Mahsulotlar</a>
+            <a class="nac-action" href="ui/pages/products.html">Mahsulotlar</a>
             <a class="nac-action" href="#membershipCardsTitle">Narxlar</a>
             <a class="nac-action" href="#serviceCardsTitle">Xizmatlar</a>
-            <a class="nac-action" href="ui/location/location.html">Manzillar</a>
+            <a class="nac-action" href="ui/pages/location.html">Manzillar</a>
             <a class="nac-action" href="ui/footer_links/about.html">Biz haqimizda</a>
         </div>
     </div>
@@ -410,6 +406,26 @@
         </footer>
 
 
-    <script type="module" src="ui/home/viewmodel/home.js"></script>
+    <script type="module" src="ui/scripts/home.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.querySelector(".search-input");
+            if (!input) return;
+
+            input.addEventListener("keydown", (e) => {
+                if (e.key !== "Enter") return;
+
+                const value = input.value.trim();
+                if (!value) return;
+
+                window.location.href =
+                    "/techhouseweb/ui/pages/products.html?search=" +
+                    encodeURIComponent(value);
+            });
+        });
+    </script>
+
+
+
 </body>
 </html>
