@@ -198,12 +198,14 @@
         if (!input) return;
 
         input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                const q = input.value.trim();
-                if (!q) return;
+            if (e.key !== "Enter") return;
 
-                location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
-            }
+            const value = input.value.trim();
+            if (!value) return;
+
+            window.location.href =
+                "/techhouseweb/ui/pages/products.html?search=" +
+                encodeURIComponent(value);
         });
     });
 </script>

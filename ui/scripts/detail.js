@@ -95,5 +95,5 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    location.href = `/techhouseweb/ui/pages/detail.html?id=${id}`;
+    location.href = `/ui/pages/detail.html?id=${id}`;
 });

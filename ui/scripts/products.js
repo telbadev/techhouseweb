@@ -61,7 +61,7 @@ function renderProducts(list) {
                     </div>
 
                     <div class="product-card-btn">
-                        <img class="small-icon" src="/techhouseweb/assets/images/basket_white.png">
+                        <img class="small-icon" src="/assets/images/basket_white.png">
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@ document.addEventListener("click", (e) => {
     if (!card) return;
 
     const id = card.dataset.id;
-    window.location.href = `/techhouseweb/ui/pages/detail.html?id=${id}`;
+    window.location.href = `/ui/pages/detail.html?id=${id}`;
 });
 
 /* ===============================

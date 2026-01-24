@@ -21,10 +21,11 @@ const basketProducts = [
 
 function renderBasketProducts() {
     const basketList = document.getElementById("basket-products");
+    basketList.innerHTML = "";
 
-    basketProducts.forEach(item => {
+    basketProducts.forEach((item, index) => {
         basketList.innerHTML += `
-        <div class="basket-cart">
+        <div class="basket-cart" data-index="${index}">
             <div class="basket-cart-img">
                 <img src="${item.image}" alt="">
             </div>
@@ -39,24 +40,40 @@ function renderBasketProducts() {
                     <p class="body-grey">
                         Narxi: <span class="body-medium">${item.price}</span>
                     </p>
-
-                    <div class="basket-cart-bottom">
-                        <p class="body-grey">
-                            Sotuvchi: ${item.seller}
-                        </p>
-
-                        <button class="basket-delete" type="button">
-                            <span class="body-grey">O'chirish</span>
-                            <img class="small-icon" src="/assets/images/delete.png" alt="">
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
-    `;
+        `;
+    });
+}
+const selectAllCheckbox = document.getElementById("select-all");
+
+selectAllCheckbox.addEventListener("change", () => {
+    const checks = document.querySelectorAll(".basket-check");
+    checks.forEach(ch => ch.checked = selectAllCheckbox.checked);
+});
+const deleteSelectedBtn = document.getElementById("delete-selected");
+
+deleteSelectedBtn.addEventListener("click", () => {
+    const carts = document.querySelectorAll(".basket-cart");
+
+    let indexesToDelete = [];
+
+    carts.forEach(cart => {
+        const checkbox = cart.querySelector(".basket-check");
+        if (checkbox.checked) {
+            indexesToDelete.push(Number(cart.dataset.index));
+        }
     });
 
-}
+    // Oxiridan boshlab o‘chiramiz (indexlar buzilmasligi uchun)
+    indexesToDelete
+        .sort((a, b) => b - a)
+        .forEach(i => basketProducts.splice(i, 1));
+
+    renderBasketProducts();
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
     renderBasketProducts()

@@ -69,14 +69,16 @@
                         <p class="body-grey">Tovarlar 2 ta</p>
                     </div>
                     <div class="basket-title-right">
-                        <div class="basket-title-item">
+                        <div class="basket-title-item" id="delete-selected">
                             <p class="body-grey">Tanlanganlarni o'chirish</p>
                             <img class="small-icon" src="/assets/images/delete.png">
                         </div>
+
                         <div class="basket-title-item">
                             <p class="body-grey">Hammasini tanlash</p>
-                            <input type="checkbox">
+                            <input type="checkbox" id="select-all">
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -170,7 +172,48 @@
             </div>
         </div>
     </footer>
+<div class="bottom-nav">
+    <a href="/index.html" class="bottom-nav-item active">
+        <img src="/assets/images/home.png" alt="">
+        <span>Home</span>
+    </a>
 
+    <a href="/ui/pages/like.html" class="bottom-nav-item">
+        <img src="/assets/images/like.png" alt="">
+        <span>Wishlist</span>
+    </a>
+
+    <a href="/ui/pages/products.html" class="bottom-nav-item">
+        <img src="/assets/images/box.png" alt="">
+        <span>Products</span>
+    </a>
+
+    <a href="/ui/pages/basket.html" class="bottom-nav-item">
+        <img src="/assets/images/basket.png" alt="">
+        <span>Basket</span>
+    </a>
+</div>
+<div class="bottom-nav">
+    <a href="/index.html" class="bottom-nav-item active">
+        <img src="/assets/images/home.png" alt="">
+        <span>Home</span>
+    </a>
+
+    <a href="/ui/pages/like.html" class="bottom-nav-item">
+        <img src="/assets/images/like.png" alt="">
+        <span>Wishlist</span>
+    </a>
+
+    <a href="/ui/pages/products.html" class="bottom-nav-item">
+        <img src="/assets/images/box.png" alt="">
+        <span>Products</span>
+    </a>
+
+    <a href="/ui/pages/basket.html" class="bottom-nav-item">
+        <img src="/assets/images/basket.png" alt="">
+        <span>Basket</span>
+    </a>
+</div>
     <script type="module" src="../scripts/home.js"></script>
     <script type="module" src="../scripts/basket.js"></script>
 <script>
@@ -179,12 +222,14 @@
         if (!input) return;
 
         input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                const q = input.value.trim();
-                if (!q) return;
+            if (e.key !== "Enter") return;
 
-                location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
-            }
+            const value = input.value.trim();
+            if (!value) return;
+
+            window.location.href =
+                "/techhouseweb/ui/pages/products.html?search=" +
+                encodeURIComponent(value);
         });
     });
 </script>

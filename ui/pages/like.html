@@ -128,6 +128,27 @@
         </div>
     </div>
 </footer>
+<div class="bottom-nav">
+    <a href="/index.html" class="bottom-nav-item active">
+        <img src="/assets/images/home.png" alt="">
+        <span>Home</span>
+    </a>
+
+    <a href="/ui/pages/like.html" class="bottom-nav-item">
+        <img src="/assets/images/like.png" alt="">
+        <span>Wishlist</span>
+    </a>
+
+    <a href="/ui/pages/products.html" class="bottom-nav-item">
+        <img src="/assets/images/box.png" alt="">
+        <span>Products</span>
+    </a>
+
+    <a href="/ui/pages/basket.html" class="bottom-nav-item">
+        <img src="/assets/images/basket.png" alt="">
+        <span>Basket</span>
+    </a>
+</div>
 <script type="module" src="../scripts/home.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -135,12 +156,14 @@
         if (!input) return;
 
         input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                const q = input.value.trim();
-                if (!q) return;
+            if (e.key !== "Enter") return;
 
-                location.href = `/techhouseweb/ui/pages/products.html?search=${encodeURIComponent(q)}`;
-            }
+            const value = input.value.trim();
+            if (!value) return;
+
+            window.location.href =
+                "/techhouseweb/ui/pages/products.html?search=" +
+                encodeURIComponent(value);
         });
     });
 </script>
